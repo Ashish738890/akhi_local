@@ -5,6 +5,8 @@ import mongoose from "mongoose";
 import path from "path";
 import { fileURLToPath } from "url";
 import predictRoute from "./routes/predict.js";
+import advisoryRoutes from "./routes/advisoryRoutes.mjs";
+
 
 dotenv.config();
 const app = express();
@@ -15,6 +17,7 @@ app.use(express.json());
 
 // API Routes
 app.use("/api/predict", predictRoute);
+app.use("/api/advisory", advisoryRoutes);
 
 // MongoDB connection
 mongoose
